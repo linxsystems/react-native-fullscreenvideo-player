@@ -309,7 +309,7 @@ export default class VideoPlayer extends Component {
   renderThumbnail() {
     const { thumbnail, style, customStyles, ...props } = this.props;
     return (
-      [
+      <View>
         <Image
           {...props}
           style={[
@@ -319,7 +319,7 @@ export default class VideoPlayer extends Component {
             customStyles.thumbnail,
           ]}
           source={thumbnail}
-        />,
+        />
         <View
           style={{
             position: 'absolute',
@@ -333,7 +333,7 @@ export default class VideoPlayer extends Component {
         >
           {this.renderStartButton()}
         </View>
-      ]
+      </View>
     );
   }
 
