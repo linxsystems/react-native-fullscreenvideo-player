@@ -309,7 +309,7 @@ export default class VideoPlayer extends Component {
   renderThumbnail() {
     const { thumbnail, style, customStyles, ...props } = this.props;
     return (
-      <View>
+      <View key={thumbnail}>
         <Image
           {...props}
           style={[
