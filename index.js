@@ -139,6 +139,10 @@ export default class VideoPlayer extends Component {
   }
 
   onStartPress() {
+    if (this.props.onStart) {
+      this.props.onStart();
+    }
+
     this.setState({
       isPlaying: true,
       isStarted: true,
@@ -188,6 +192,10 @@ export default class VideoPlayer extends Component {
   }
 
   onPlayPress() {
+    if (this.props.onPlayPress) {
+      this.props.onPlayPress();
+    }
+
     this.setState({
       isPlaying: !this.state.isPlaying,
     });
@@ -292,6 +300,33 @@ export default class VideoPlayer extends Component {
       isControlsVisible: true,
     });
     this.hideControls();
+  }
+
+  seek(t) {
+    this.player.seek(t);
+  }
+
+  stop() {
+    this.setState({
+      isPlaying: false,
+      progress: 0,
+    });
+    this.seek(0);
+    this.showControls();
+  }
+
+  pause() {
+    this.setState({
+      isPlaying: false,
+    });
+    this.showControls();
+  }
+
+  resume() {
+    this.setState({
+      isPlaying: true,
+    });
+    this.showControls();
   }
 
   renderStartButton() {
