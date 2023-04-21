@@ -1,6 +1,6 @@
 {
   "name": "react-native-video-player",
-  "version": "0.8.0",
+  "version": "0.14.0",
   "description": "A video player for React Native with controls",
   "main": "index.js",
   "scripts": {
@@ -29,5 +29,8 @@
     "eslint-plugin-import": "^1.14.0",
     "eslint-plugin-jsx-a11y": "^2.2.1",
     "eslint-plugin-react": "^6.2.0"
+  },
+  "dependencies": {
+    "deprecated-react-native-prop-types": "^2.3.0"
   }
 }
