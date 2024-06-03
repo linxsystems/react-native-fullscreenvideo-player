@@ -409,6 +409,7 @@ export default class VideoPlayer extends Component {
   resume() {
     this.setState({
       isPlaying: true,
+      isStarted: true,
     });
     this.showControls();
   }
