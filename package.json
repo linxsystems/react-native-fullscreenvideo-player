@@ -17,11 +17,10 @@
   "license": "ISC",
   "repository": "cornedor/react-native-video-player",
   "peerDependencies": {
-    "prop-types": "*",
     "react": "*",
     "react-native": "*",
-    "react-native-vector-icons": ">= 2.1.0",
-    "react-native-video": "^2.0.0"
+    "react-native-vector-icons": ">= 10.0.0",
+    "react-native-video": ">= 6.0.0"
   },
   "devDependencies": {
     "eslint": "^3.4.0",
@@ -29,8 +28,5 @@
     "eslint-plugin-import": "^1.14.0",
     "eslint-plugin-jsx-a11y": "^2.2.1",
     "eslint-plugin-react": "^6.2.0"
-  },
-  "dependencies": {
-    "deprecated-react-native-prop-types": "^2.3.0"
   }
 }

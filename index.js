@@ -1,19 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Image, ImageBackground, NativeModules, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { ViewPropTypes, ImagePropTypes } from 'deprecated-react-native-prop-types';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Video from 'react-native-video';
 
 const BackgroundImage = ImageBackground || Image; // fall back to Image if RN < 0.46
-
-let ViewPropTypesVar;
-
-if (ViewPropTypes) {
-  ViewPropTypesVar = ViewPropTypes;
-} else {
-  ViewPropTypesVar = View.propTypes;
-}
 
 const getDurationTime = (duration) => {
   const padTimeValueString = (value) => value.toString().padStart(2, '0');
@@ -615,59 +605,6 @@ export default class VideoPlayer extends Component {
     );
   }
 }
-
-VideoPlayer.propTypes = {
-  video: Video.propTypes.source,
-  thumbnail: ImagePropTypes.source,
-  endThumbnail: ImagePropTypes.source,
-  videoWidth: PropTypes.number,
-  videoHeight: PropTypes.number,
-  duration: PropTypes.number,
-  autoplay: PropTypes.bool,
-  paused: PropTypes.bool,
-  defaultMuted: PropTypes.bool,
-  muted: PropTypes.bool,
-  style: ViewPropTypesVar.style,
-  controlsTimeout: PropTypes.number,
-  disableControlsAutoHide: PropTypes.bool,
-  disableFullscreen: PropTypes.bool,
-  loop: PropTypes.bool,
-  resizeMode: Video.propTypes.resizeMode,
-  hideControlsOnStart: PropTypes.bool,
-  endWithThumbnail: PropTypes.bool,
-  disableSeek: PropTypes.bool,
-  pauseOnPress: PropTypes.bool,
-  fullScreenOnLongPress: PropTypes.bool,
-  customStyles: PropTypes.shape({
-    wrapper: ViewPropTypesVar.style,
-    video: Video.propTypes.style,
-    videoWrapper: ViewPropTypesVar.style,
-    controls: ViewPropTypesVar.style,
-    playControl: ViewPropTypesVar.style,
-    controlButton: ViewPropTypesVar.style,
-    controlIcon: Icon.propTypes.style,
-    playIcon: Icon.propTypes.style,
-    seekBar: ViewPropTypesVar.style,
-    seekBarFullWidth: ViewPropTypesVar.style,
-    seekBarProgress: ViewPropTypesVar.style,
-    seekBarKnob: ViewPropTypesVar.style,
-    seekBarKnobSeeking: ViewPropTypesVar.style,
-    seekBarBackground: ViewPropTypesVar.style,
-    thumbnail: ImagePropTypes.style,
-    playButton: ViewPropTypesVar.style,
-    playArrow: Icon.propTypes.style,
-    durationText: ViewPropTypesVar.style
-  }),
-  onEnd: PropTypes.func,
-  onProgress: PropTypes.func,
-  onLoad: PropTypes.func,
-  onStart: PropTypes.func,
-  onPlayPress: PropTypes.func,
-  onHideControls: PropTypes.func,
-  onShowControls: PropTypes.func,
-  onMutePress: PropTypes.func,
-  showDuration: PropTypes.bool
-};
 
 VideoPlayer.defaultProps = {
   videoWidth: 1280,
